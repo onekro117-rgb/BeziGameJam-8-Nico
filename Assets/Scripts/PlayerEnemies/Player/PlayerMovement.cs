@@ -111,7 +111,7 @@ public class PlayerMovement : MonoBehaviour
         {
             TurnCheck(moveInput);
 
-            float baseSpeed = InputManager.RunIsHeld ? MovementStats.MaxRunSpeed : MovementStats.MaxWalkSpeed;
+            float baseSpeed = InputManager.DashIsPressed ? MovementStats.MaxRunSpeed : MovementStats.MaxWalkSpeed;
             float effectiveSpeed = baseSpeed * SpeedMultiplier;
 
             Vector2 targetVelocity = Vector2.zero;

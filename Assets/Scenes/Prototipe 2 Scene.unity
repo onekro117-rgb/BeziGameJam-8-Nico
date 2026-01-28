@@ -2337,6 +2337,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ModifierManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6529296446232891405, guid: 3aadc3cccd305f140acf553b7f08ed41, type: 3}
+      propertyPath: allModifiers.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6529296446232891405, guid: 3aadc3cccd305f140acf553b7f08ed41, type: 3}
+      propertyPath: 'allModifiers.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 881934da879658d4abd007aebf9625ad, type: 2}
     - target: {fileID: 7829385676614275701, guid: 3aadc3cccd305f140acf553b7f08ed41, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

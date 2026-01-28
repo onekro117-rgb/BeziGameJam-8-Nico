@@ -2,7 +2,7 @@
 - Project name: BeziGameJam-8
 - Unity version: Unity 6000.3.2f1
 - Active game object:
-  - Name: Ceiling
+  - Name: InputManager
   - Tag: Untagged
-  - Layer: Ground
+  - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

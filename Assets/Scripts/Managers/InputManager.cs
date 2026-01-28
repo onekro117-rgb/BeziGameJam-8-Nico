@@ -9,7 +9,7 @@ public class InputManager : MonoBehaviour
     public static bool JumpWasPressed;
     public static bool JumpIsHeld;
     public static bool JumpWasReleased;
-    public static bool RunIsHeld;
+    public static bool DashIsPressed;
     public static bool AttackWasPressed;
     public static bool MagicWasPressed;
     public static bool Magic1WasPressed;
@@ -22,7 +22,7 @@ public class InputManager : MonoBehaviour
 
     private InputAction _moveAction;
     private InputAction _jumpAction;
-    private InputAction _runAction;
+    private InputAction _dashAction;
     private InputAction _attackAction;
     private InputAction _magicAction;
     private InputAction _magic1Action;
@@ -47,7 +47,7 @@ public class InputManager : MonoBehaviour
         {
             _moveAction = PlayerInput.actions["Move"];
             _jumpAction = PlayerInput.actions["Jump"];
-            _runAction  = PlayerInput.actions["Run"];
+            _dashAction  = PlayerInput.actions["Dash"];
             _attackAction = PlayerInput.actions["Attack"];
             _magicAction = PlayerInput.actions["Magic"];
             
@@ -59,6 +59,8 @@ public class InputManager : MonoBehaviour
             _qteButton2Action = PlayerInput.actions["QTEButton2"];
             _qteButton3Action = PlayerInput.actions["QTEButton3"];
             _qteButton4Action = PlayerInput.actions["QTEButton4"];
+
+            PlayerInput.actions.Enable();
         }
     }
     
@@ -83,7 +85,7 @@ public class InputManager : MonoBehaviour
             JumpIsHeld = _jumpAction.IsPressed();
             JumpWasReleased = _jumpAction.WasReleasedThisFrame();
 
-            RunIsHeld = _runAction.IsPressed();
+            DashIsPressed = _dashAction.IsPressed();
             
             AttackWasPressed = _attackAction.WasPressedThisFrame();
             MagicWasPressed = _magicAction.WasPressedThisFrame();

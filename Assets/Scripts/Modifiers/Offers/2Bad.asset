@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff9fad83144bee041bb649f0658d97bf, type: 3}
-  m_Name: Mirror Controls
-  m_EditorClassIdentifier: Assembly-CSharp::MirrorControlsModifier
-  Type: 2
-  Title: Mirrow Controls
-  Description: Left/Right Controls inverted
+  m_Script: {fileID: 11500000, guid: 4f900605ad6fa804cbacbee194ba9c0b, type: 3}
+  m_Name: 2Bad
+  m_EditorClassIdentifier: Assembly-CSharp::OfferRecipe
+  goodCount: 0
+  badCount: 2
+  neutralCount: 0

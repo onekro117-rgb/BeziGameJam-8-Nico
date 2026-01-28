@@ -34,18 +34,72 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Run",
+                    "name": "Attack",
                     "type": "Button",
-                    "id": "c5f875a7-5a83-4467-8b67-d83000f997bb",
+                    "id": "7cf2e4dd-7298-4df7-b040-322dc96326cf",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Attack",
+                    "name": "Magic1",
                     "type": "Button",
-                    "id": "7cf2e4dd-7298-4df7-b040-322dc96326cf",
+                    "id": "e0e63d7a-8f28-491d-ba83-a2cb38127266",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Magic2",
+                    "type": "Button",
+                    "id": "610e5619-9b53-4af3-aa6a-e98b80868c32",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Magic3",
+                    "type": "Button",
+                    "id": "b6eaa4df-f999-49ee-af70-7c65cc81da35",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "QTEButton1",
+                    "type": "Button",
+                    "id": "18f8faaa-a66b-46c3-addc-1b3989ac1ec4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "QTEButton2",
+                    "type": "Button",
+                    "id": "b426879c-5ee3-41d1-8fd9-9cf40b96a27c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "QTEButton3",
+                    "type": "Button",
+                    "id": "fbc6bb6c-f877-4c37-8867-42d03c3aea28",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "QTEButton4",
+                    "type": "Button",
+                    "id": "8d96285b-0538-4106-83a5-a234a635bc8b",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -111,7 +165,7 @@
                 {
                     "name": "",
                     "id": "b44f1647-85b9-4982-b154-c11743041fd2",
-                    "path": "<Keyboard>/f",
+                    "path": "<Keyboard>/leftShift",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -132,23 +186,89 @@
                 },
                 {
                     "name": "",
-                    "id": "520c3a5a-332f-4402-a3cb-00ef994991e9",
-                    "path": "<Keyboard>/e",
+                    "id": "aefc926e-d3f1-4c86-b134-d259d79cf860",
+                    "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Run",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "aefc926e-d3f1-4c86-b134-d259d79cf860",
+                    "id": "fa7e4c12-7993-4554-a192-fd30019b7808",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Magic1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "54f119a7-99e4-4332-a796-38c202115330",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Magic2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2d6fafc7-63d1-41b4-82c5-8702eab4925c",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Attack",
+                    "action": "Magic3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e0c79371-decd-465a-8f15-5e282db1def4",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "QTEButton1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "83b17782-95e3-4b6f-8b65-2314ddaf4eb5",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "QTEButton2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6274c225-a2bf-4754-a55e-5c2862a96fa6",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "QTEButton3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e6f13076-6dcb-4a7c-8a69-a48fca751d4e",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "QTEButton4",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -39,14 +39,6 @@ public static class InputActionsSetup
 
         bool needsSave = false;
 
-        if (playerMap.FindAction("Magic") == null)
-        {
-            playerMap.AddAction("Magic", InputActionType.Button);
-            var magicAction = playerMap.FindAction("Magic");
-            magicAction.AddBinding("<Keyboard>/a");
-            needsSave = true;
-            Debug.Log("Added Magic action");
-        }
         
         if (playerMap.FindAction("Magic1") == null)
         {

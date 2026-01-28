@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Modifiers/Neutral/Mirror Controls")]
+[CreateAssetMenu(menuName = "Modifiers/Bad/Mirror Controls")]
 public class MirrorControlsModifier : ModifierData
 {
     public override IRevertibleEffect Apply(GameManager gameManager)
