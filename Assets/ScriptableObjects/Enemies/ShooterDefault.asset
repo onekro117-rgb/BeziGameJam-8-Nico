@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab9b85fccaf31fb488da89da0d3bf986, type: 3}
+  m_Name: ShooterDefault
+  m_EditorClassIdentifier: Assembly-CSharp::ShooterEnemyConfig
+  patrolSpeed: 1.5
+  chaseSpeed: 3
+  detectionRange: 8
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  contactDamage: 1
+  contactDamageCooldown: 1
+  prepareTime: 1.5
+  recoverTime: 1
+  telegraphColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  recoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  projectilePrefab: {fileID: 3473751912084621934, guid: 8a31f68bea90db547ac9134553f3a59c, type: 3}
+  projectileSpeed: 6
+  arcHeight: 3
+  aimTime: 1.5
+  shootCooldown: 4.5
+  projectileDamage: 2
+  projectileLifetime: 5
+  patrolDistance: 4
+  balanceNotes: 

@@ -81,7 +81,7 @@ GameObject:
   - component: {fileID: 7418878649061486069}
   - component: {fileID: 5328931465682474470}
   - component: {fileID: 8890412108441302758}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 424e41a73912a694f89fdd9e929cd6ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDeathHandler
-  respawnDelay: 0.1
+  playerHealth: {fileID: 0}
 --- !u!114 &5328931465682474470
 MonoBehaviour:
   m_ObjectHideFlags: 0
