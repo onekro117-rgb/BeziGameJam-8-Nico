@@ -81,6 +81,7 @@ GameObject:
   - component: {fileID: 7418878649061486069}
   - component: {fileID: 5328931465682474470}
   - component: {fileID: 8890412108441302758}
+  - component: {fileID: 8966124316509904917}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -200,7 +201,7 @@ MonoBehaviour:
   availableSpells:
   - {fileID: 11400000, guid: 6504564b6a6f93e49b1694484476f54a, type: 2}
   - {fileID: 11400000, guid: 319f1d828ab6ebb418fd97c0ea2b319c, type: 2}
-  - {fileID: 11400000, guid: 462b86dab7a0e4649b4e38c2c00a475f, type: 2}
+  - {fileID: 11400000, guid: 018d5032e31ce7d48964f3cbc51caac3, type: 2}
   currentSpellIndex: 0
 --- !u!114 &8890412108441302758
 MonoBehaviour:
@@ -221,6 +222,31 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   knockbackForce: 5
+--- !u!114 &8966124316509904917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5549055105974838881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f63a70921d93ef4198c2be4e3cee934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RingMagicSpawner
+  ringMagicPrefab: {fileID: 0}
+  perfectRadius: 2.5
+  perfectDamage: 2
+  perfectDuration: 5
+  perfectRotationSpeed: 180
+  perfectHitInterval: 0.5
+  perfectColor: {r: 0, g: 1, b: 1, a: 1}
+  partialRadius: 2
+  partialDamage: 1
+  partialDuration: 3
+  partialRotationSpeed: 180
+  partialHitInterval: 0.75
+  partialColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &5981925293988874587
 GameObject:
   m_ObjectHideFlags: 0

@@ -122,13 +122,33 @@ public class MagicSystem : MonoBehaviour
             Debug.LogWarning($"La magia '{spell.spellName}' no tiene MagicDamageArea asignado!");
             return;
         }
-        
+
         if (damageMultiplier <= 0f)
         {
             Debug.Log($"QTE fallido, no se aplica daño.");
             return;
         }
-        
+
+        // Check if this is Ring Magic
+        if (spell.spellName.Contains("Aro") || spell.spellName.Contains("Ring"))
+        {
+            RingMagicSpawner ringSpawner = GetComponent<RingMagicSpawner>();
+            if (ringSpawner != null)
+            {
+                if (damageMultiplier >= 1f)
+                {
+                    ringSpawner.SpawnPerfectRing();
+                }
+                else if (damageMultiplier >= 0.5f)
+                {
+                    ringSpawner.SpawnPartialRing();
+                }
+
+                Debug.Log($"[{spell.spellName}] Ring Magic spawned!");
+                return; // Don't apply instant damage, ring will handle it over time
+            }
+        }
+
         int finalDamage = Mathf.RoundToInt(spell.damageArea.baseDamage * damageMultiplier);
         Vector2 playerPosition = transform.position;
         
