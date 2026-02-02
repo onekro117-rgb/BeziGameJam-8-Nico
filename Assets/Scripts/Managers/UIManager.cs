@@ -151,11 +151,11 @@ public class UIManager : MonoBehaviour
         if (player != null)
         {
             // Resetear vidas
-            HealthSystem healthSystem = player.GetComponent<HealthSystem>();
-            if (healthSystem != null)
+            HealthComponent healthComponent = player.GetComponent<HealthComponent>();
+            if (healthComponent != null)
             {
-                healthSystem.ResetLives();
-                Debug.Log("✓ Vidas reseteadas");
+                healthComponent.ResetHealth();
+                Debug.Log("✓ Salud reseteada");
             }
 
             // Resetear salud

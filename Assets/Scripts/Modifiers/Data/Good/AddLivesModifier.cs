@@ -1,23 +1,34 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "Modifiers/Good/Add Life")]
+[CreateAssetMenu(menuName = "Modifiers/Good/Heal Health")]
 public class AddLifeModifier : ModifierData
 {
-    public int lives = 1;
+    [Header("Heal Settings")]
+    [Tooltip("Amount of HP to heal")]
+    [SerializeField] private int healAmount = 1;
 
     public override IRevertibleEffect Apply(GameManager gameManager)
     {
-        // Busca el HealthSystem en la escena
-        HealthSystem health = Object.FindFirstObjectByType<HealthSystem>();
-
-        if (health == null)
+        if (gameManager == null || gameManager.Player == null)
         {
-            Debug.LogError("AddLifeModifier: No se encontró HealthSystem en la escena.");
+            Debug.LogError("HealHealthModifier: GameManager or Player is null.");
             return null;
         }
 
-        health.AddLifes(lives);
-        return null; // No reversible
+        // Get PlayerHealth component
+        HealthComponent health = gameManager.Player.GetComponent<HealthComponent>();
+        if (health == null)
+        {
+            Debug.LogError("HealHealthModifier: No HealthComponent found on Player.");
+            return null;
+        }
+
+        // Heal the player
+        health.Heal(healAmount);
+
+        Debug.Log($"<color=green>[HealHealth]</color> Healed {healAmount} HP. Current: {health.CurrentHealth}/{health.MaxHealth}");
+
+        return null; // Not reversible (healing is instant)
     }
 }
 

@@ -168,8 +168,8 @@ public class WaveManager : MonoBehaviour
                 availableSpawnPoints.RemoveAt(randomIndex);
                 
                 GameObject enemy = Instantiate(selectedInfo.enemyPrefab, spawnPoint.position, Quaternion.identity);
-                
-                HealthEnemies enemyHealth = enemy.GetComponent<HealthEnemies>();
+
+                HealthComponent enemyHealth = enemy.GetComponent<HealthComponent>();
                 if (enemyHealth != null)
                 {
                     enemyHealth.OnDeath += () => OnEnemyDied(enemy);

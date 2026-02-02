@@ -175,7 +175,7 @@ public class MagicSystem : MonoBehaviour
         
         foreach (var enemy in enemiesHit)
         {
-            enemy.TakeDamage(finalDamage);
+            enemy.TakeDamage(finalDamage, playerPosition);
         }
         
         Debug.Log($"[{spell.spellName}] Daño aplicado: {finalDamage} a {enemiesHit.Count} enemigo(s)");

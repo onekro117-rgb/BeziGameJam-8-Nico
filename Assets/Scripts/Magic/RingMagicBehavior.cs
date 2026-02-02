@@ -214,7 +214,8 @@ public class RingMagicBehavior : MonoBehaviour
         }
 
         // Apply damage
-        enemy.TakeDamage(damagePerHit);
+        Vector2 playerPosition = playerTransform.position;
+        enemy.TakeDamage(damagePerHit, playerPosition);
         lastHitTime[enemy] = currentTime;
 
         if (showDebugLogs)

@@ -48,7 +48,7 @@ public class QTEManager : MonoBehaviour
     {
         if (!isQTEActive) return;
 
-        qteTimer += Time.deltaTime;
+        qteTimer += Time.unscaledDeltaTime;
 
         if (qteTimer < startDelay)
         {
@@ -76,6 +76,8 @@ public class QTEManager : MonoBehaviour
         qteTimer = 0f;
         currentProgress = 0f;
         isQTEActive = true;
+
+        Time.timeScale = 0f;
 
         PauseGame();
 
@@ -154,7 +156,9 @@ public class QTEManager : MonoBehaviour
     private void EndQTE()
     {
         isQTEActive = false;
-        
+
+        Time.timeScale = 1f;
+
         ResumeGame();
         
         Debug.Log($"=== MAGIA FINALIZADA === Puntos obtenidos: {totalScore}/{qteButtons.Count * 3}");

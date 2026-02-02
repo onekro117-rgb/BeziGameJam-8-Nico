@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Collider2D _feetCollider;
     [SerializeField] private Collider2D _bodyCollider;
 
+    private KnockbackReceiver knockbackReceiver;
     private Rigidbody2D _rb;
 
     // Spawn variable
@@ -67,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _isFacingRight = true;
         _rb = GetComponent<Rigidbody2D>();
+        knockbackReceiver = GetComponent<KnockbackReceiver>();
 
         _playerSpawnPosition = _respawnPos.position;
         _playerSpawnRotation = transform.rotation;
@@ -84,6 +86,11 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         CollisionChecks();
+
+        if (knockbackReceiver != null && knockbackReceiver.IsKnockedBack)
+        {
+            return; // El knockback controla la velocity
+        }
 
         // Si estamos en Dash, controlamos la velocidad directamente
         if (_isDashing)

@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 2051345361285499905}
   - component: {fileID: 2978658623414730965}
   - component: {fileID: 56418707497697623}
+  - component: {fileID: -6419059400415253743}
   m_Layer: 0
   m_Name: Enemy Base
   m_TagString: Enemy
@@ -185,7 +186,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184c902ac6357e04997f186f458df356, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  knockbackForce: 5
 --- !u!114 &7943537719579397867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,3 +277,42 @@ MonoBehaviour:
   raycastStep: 0.5
   showDebugLogs: 0
   showGizmos: 1
+--- !u!114 &-6419059400415253743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250174970550048140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b49b45103f1597444a83025addbf81cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KnockbackReceiver
+  knockbackForce: 10
+  knockbackDuration: 0.5
+  knockbackCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  showDebugLogs: 0

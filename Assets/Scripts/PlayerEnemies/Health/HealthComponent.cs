@@ -17,12 +17,14 @@ public class HealthComponent : MonoBehaviour, IDamageable
 
     protected float invulnerabilityTimer;
     protected int baseMaxHealth;
+    protected KnockbackReceiver knockbackReceiver;
 
     protected virtual void Awake()
     {
         baseMaxHealth = maxHealth;
         CurrentHealth = maxHealth;
         IsDead = false;
+        knockbackReceiver = GetComponent<KnockbackReceiver>();
     }
 
     protected virtual void Update()
@@ -55,6 +57,28 @@ public class HealthComponent : MonoBehaviour, IDamageable
         if (CurrentHealth <= 0)
         {
             Die();
+        }
+    }
+
+    /// <summary>
+    /// Take damage with knockback
+    /// </summary>
+    public virtual void TakeDamage(int damage, Vector2 attackerPosition)
+    {
+        Debug.Log($"<color=yellow>[DEBUG]</color> HealthComponent.TakeDamage con knockback llamado");
+
+        TakeDamage(damage);
+
+        if (knockbackReceiver != null)
+        {
+            Debug.Log($"<color=green>[DEBUG]</color> KnockbackReceiver encontrado, aplicando knockback");
+            Vector2 direction = ((Vector2)transform.position - attackerPosition).normalized;
+            Debug.Log($"<color=green>[DEBUG]</color> Dirección calculada: {direction}");
+            knockbackReceiver.ApplyKnockback(direction);
+        }
+        else
+        {
+            Debug.LogError($"<color=red>[DEBUG]</color> NO se encontró KnockbackReceiver!");
         }
     }
 

@@ -77,10 +77,11 @@ GameObject:
   - component: {fileID: 4686406406708993106}
   - component: {fileID: 5007493478458066857}
   - component: {fileID: 2610294079733095419}
-  - component: {fileID: 74113627356969781}
-  - component: {fileID: 7418878649061486069}
+  - component: {fileID: 4937241900580841992}
   - component: {fileID: 5328931465682474470}
   - component: {fileID: 8966124316509904917}
+  - component: {fileID: 7418878649061486069}
+  - component: {fileID: 5464711508222594089}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -103,6 +104,7 @@ Transform:
   m_Children:
   - {fileID: 8333514629932087651}
   - {fileID: 6393350750740887368}
+  - {fileID: 5821381580603246003}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &5007493478458066857
@@ -120,7 +122,7 @@ Rigidbody2D:
   m_Mass: 0.0001
   m_LinearDamping: 0
   m_AngularDamping: 0
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: f7ad8fec29bd3744fb9f5511251ee60b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -148,7 +150,7 @@ MonoBehaviour:
   _feetCollider: {fileID: 7642214118305607179}
   _bodyCollider: {fileID: 4712052818484477439}
   _respawnPos: {fileID: 0}
---- !u!114 &74113627356969781
+--- !u!114 &4937241900580841992
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,33 +159,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5549055105974838881}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c7f3264055ddc941bb0a4084d74a08f, type: 3}
+  m_Script: {fileID: 11500000, guid: 85017fdb32bdfa84283a8a0c01ba0e26, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
-  maxLives: 5
-  currentLives: 0
-  OnLivesChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  OnLifeLost:
-    m_PersistentCalls:
-      m_Calls: []
-  OnGameOver:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &7418878649061486069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5549055105974838881}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 424e41a73912a694f89fdd9e929cd6ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerDeathHandler
-  playerHealth: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  maxHealth: 5
+  invulnerabilityDuration: 1
+  playerMovement: {fileID: 2610294079733095419}
 --- !u!114 &5328931465682474470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f63a70921d93ef4198c2be4e3cee934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RingMagicSpawner
-  ringMagicPrefab: {fileID: 0}
+  ringMagicPrefab: {fileID: 9204833656354481564, guid: 8406afd2ca8c6594fa5e1c4855bfe57c, type: 3}
   perfectRadius: 2.5
   perfectDamage: 2
   perfectDuration: 5
@@ -227,6 +208,58 @@ MonoBehaviour:
   partialRotationSpeed: 180
   partialHitInterval: 0.75
   partialColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+--- !u!114 &7418878649061486069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5549055105974838881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 424e41a73912a694f89fdd9e929cd6ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDeathHandler
+  playerHealth: {fileID: 4937241900580841992}
+--- !u!114 &5464711508222594089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5549055105974838881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b49b45103f1597444a83025addbf81cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KnockbackReceiver
+  knockbackForce: 10
+  knockbackDuration: 0.5
+  knockbackCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  showDebugLogs: 1
 --- !u!1 &5981925293988874587
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,3 +589,51 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &8834890201478374509
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5821381580603246003}
+  - component: {fileID: 402298393907844673}
+  m_Layer: 8
+  m_Name: QTEManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5821381580603246003
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8834890201478374509}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4686406406708993106}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &402298393907844673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8834890201478374509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bba4f0c0f4d4ba94487fae9045952af8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QTEManager
+  startDelay: 1
+  barDuration: 2
+  perfectZoneSize: 0.05
+  goodZoneSize: 0.1

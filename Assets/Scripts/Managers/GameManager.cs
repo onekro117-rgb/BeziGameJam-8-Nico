@@ -82,9 +82,6 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning("⚠ PlayerHealth no asignado en GameManager");
         }
 
-        // 2.2 - Ya no reseteamos vidas porque no usamos HealthSystem
-        // El sistema ahora es: Salud = 0 → Game Over directo
-
         // 2.3 - Posición y movimiento
         if (playerMovement != null)
         {
@@ -148,5 +145,17 @@ public class GameManager : MonoBehaviour
         }
 
         Debug.Log("=== JUEGO RESETEADO COMPLETAMENTE ===");
+    }
+
+    public void StartGame()
+    {
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.PlayBattleMusic();
+    }
+
+    public void ReturnToMenu()
+    {
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.PlayMenuMusic();
     }
 }

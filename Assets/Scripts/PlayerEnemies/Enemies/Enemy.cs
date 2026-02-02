@@ -1,18 +1,13 @@
 using UnityEngine;
 
-[RequireComponent(typeof(HealthEnemies))]
+[RequireComponent(typeof(HealthComponent))]
 public class Enemy : MonoBehaviour
 {
-    [Header("Knockback")]
-    [SerializeField] private float knockbackForce = 5f;
-
-    private IDamageable health;
-    private Rigidbody2D rb;
+    private HealthComponent health;
 
     private void Awake()
     {
-        health = GetComponent<IDamageable>();
-        rb = GetComponent<Rigidbody2D>();
+        health = GetComponent<HealthComponent>();
 
         if (health != null)
         {
@@ -20,26 +15,18 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Vector2 knockbackDirection = (transform.position - collision.transform.position).normalized;
-            ApplyKnockback(knockbackDirection);
-        }
-    }
-
-    private void ApplyKnockback(Vector2 direction)
-    {
-        if (rb != null)
-        {
-            rb.linearVelocity = new Vector2(direction.x * knockbackForce, knockbackForce);
-        }
-    }
-
     private void HandleDeath()
     {
         Debug.Log($"{gameObject.name} died!");
         Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        // Unsubscribe from event to prevent memory leaks
+        if (health != null)
+        {
+            health.OnDeath -= HandleDeath;
+        }
     }
 }

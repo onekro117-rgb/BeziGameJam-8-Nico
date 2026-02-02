@@ -75,7 +75,8 @@ public class EnemyDamageOnTouch : MonoBehaviour
             int damage = config != null ? config.contactDamage : 1;
 
             // Aplicar daño
-            playerHealth.TakeDamage(damage);
+            Vector2 enemyPosition = transform.position;
+            playerHealth.TakeDamage(damage, enemyPosition);
 
             // Iniciar cooldown
             damageCooldown.StartCooldown();
